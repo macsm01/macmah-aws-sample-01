@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Amazon Bedrock Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h2, h3 {
+            color: #5a5a5a;
+        }
+
+        #questionInput, #questionsTable {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #apiResponse, #questionsTable {
+            background-color: #f9f9f9;
+            border: 2px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+            overflow-y: auto;
+            font-family: monospace;
+        }
+
+        #apiResponse {
+            min-height: 100px;
+            white-space: pre-wrap;
+        }
+
+        #questionsTable th, #questionsTable td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        #questionsTable th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        #questionsTable tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Guardrails for Amazon Bedrock Demo</h2>
+    <p>Model: Jurassic-2 Ultra</p>
+    <h3>Request:</h3>
+    <input type="text" id="questionInput" placeholder="Enter your request here">
+    <button onclick="submitQuestion()">Submit</button>
+
+    <h3>Response:</h3>
+    <pre id="apiResponse"></pre>
+
+    <h3>Recent Requests and Responses</h3>
+    <table id="questionsTable">
+        <thead>
+            <tr>
+                <th>Timestamp</th>
+                <th>Request</th>
+                <th>Response</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Data rows will be inserted here by JavaScript -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
